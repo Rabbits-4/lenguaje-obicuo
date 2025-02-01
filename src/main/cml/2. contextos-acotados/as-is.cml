@@ -1,0 +1,98 @@
+// AS-IS Context Map
+ContextMap SaludTechContextMap {
+    type SYSTEM_LANDSCAPE
+    state AS_IS
+
+    contains DataManagementContext
+    contains ArtificialIntelligenceContext
+    contains ClientAndPartnerManagementContext
+    contains SecurityAndComplianceContext
+    contains InfrastructureAndPlatformContext
+
+    // Relaciones actuales AS-IS
+    DataManagementContext [SK]<->[SK] ArtificialIntelligenceContext
+    DataManagementContext [D]<-[U] ClientAndPartnerManagementContext
+    DataManagementContext [D]<-[U] SecurityAndComplianceContext
+    DataManagementContext [D]<-[U] InfrastructureAndPlatformContext
+}
+
+BoundedContext DataManagementContext {
+    domainVisionStatement = "Gestiona la recolección, procesamiento, anonimización y enriquecimiento de datos médicos."
+    
+    Module ingestion {
+        Aggregate DataSource {
+            Entity DataSource {
+                String id
+                String sourceName
+                String types
+            }
+        }
+    }
+
+    Module anonymization {
+        Aggregate AnonymizedData {
+            Entity AnonymizedData {
+                String id
+                String originalId
+                Date anonymizedDate
+            }
+        }
+    }
+}
+
+BoundedContext ArtificialIntelligenceContext {
+    domainVisionStatement = "Optimiza el entrenamiento, evaluación y distribución de modelos de IA aplicados a datos médicos."
+    
+    Module modelTraining {
+        Aggregate Dataset {
+            Entity Dataset {
+                String id
+                String descriptions
+                Date createdDate
+            }
+        }
+    }
+}
+
+BoundedContext ClientAndPartnerManagementContext {
+    domainVisionStatement = "Administra relaciones con socios de datos, clientes, facturación y contratos."
+
+    Module clientManagement {
+        Aggregate ClientAccount {
+            Entity ClientAccount {
+                String id
+                String name
+                String clientEmail
+            }
+        }
+    }
+}
+
+BoundedContext SecurityAndComplianceContext {
+    domainVisionStatement = "Garantiza la seguridad de los datos, el control de accesos y el cumplimiento de normativas legales."
+
+    Module accessControl {
+        Aggregate UserCredential {
+            Entity UserCredential {
+                String userId
+                String hashedPassword
+                List<String> roles
+            }
+        }
+    }
+}
+
+BoundedContext InfrastructureAndPlatformContext {
+    domainVisionStatement = "Proporciona la infraestructura tecnológica para soportar la operación de STA."
+
+    Module cloudInfrastructure {
+        Aggregate VirtualEnvironment {
+            Entity VirtualEnvironment {
+                String id
+                String region
+                String status
+            }
+        }
+    }
+}
+
