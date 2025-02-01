@@ -3,20 +3,21 @@ ContextMap SaludTechContextMap {
     type SYSTEM_LANDSCAPE
     state AS_IS
 
-    contains DataManagementContext
-    contains ArtificialIntelligenceContext
-    contains ClientAndPartnerManagementContext
-    contains SecurityAndComplianceContext
-    contains InfrastructureAndPlatformContext
+    contains ContextoDeRecaudarImagenes
+    contains ContextoDeProcesamientoImagenes
+    contains ContextoDeSeguridadYLegislacion
+    contains ContextoDeDistribucionDeImagenes
+    contains ContextoDeInfraestructura
 
     // Relaciones actuales AS-IS
-    DataManagementContext [SK]<->[SK] ArtificialIntelligenceContext
-    DataManagementContext [D]<-[U] ClientAndPartnerManagementContext
-    DataManagementContext [D]<-[U] SecurityAndComplianceContext
-    DataManagementContext [D]<-[U] InfrastructureAndPlatformContext
+    ContextoDeSeguridadYLegislacion [SK]<->[SK] ContextoDeProcesamientoImagenes
+    ContextoDeSeguridadYLegislacion [SK]<->[SK] ContextoDeRecaudarImagenes
+    ContextoDeProcesamientoImagenes [D]<-[U] ContextoDeRecaudarImagenes
+    ContextoDeDistribucionDeImagenes [D]<-[U] ContextoDeProcesamientoImagenes
+    ContextoDeInfraestructura [D] <- [U] ContextoDeRecaudarImagenes
 }
 
-BoundedContext DataManagementContext {
+BoundedContext ContextoDeRecaudarImagenes {
     domainVisionStatement = "Gestiona la recolección, procesamiento, anonimización y enriquecimiento de datos médicos."
     
     Module ingestion {
@@ -33,14 +34,13 @@ BoundedContext DataManagementContext {
         Aggregate AnonymizedData {
             Entity AnonymizedData {
                 String id
-                String originalId
                 Date anonymizedDate
             }
         }
     }
 }
 
-BoundedContext ArtificialIntelligenceContext {
+BoundedContext ContextoDeProcesamientoImagenes {
     domainVisionStatement = "Optimiza el entrenamiento, evaluación y distribución de modelos de IA aplicados a datos médicos."
     
     Module modelTraining {
@@ -54,7 +54,7 @@ BoundedContext ArtificialIntelligenceContext {
     }
 }
 
-BoundedContext ClientAndPartnerManagementContext {
+BoundedContext ContextoDeDistribucionDeImagenes {
     domainVisionStatement = "Administra relaciones con socios de datos, clientes, facturación y contratos."
 
     Module clientManagement {
@@ -63,26 +63,36 @@ BoundedContext ClientAndPartnerManagementContext {
                 String id
                 String name
                 String clientEmail
+                String  plan
             }
         }
     }
 }
 
-BoundedContext SecurityAndComplianceContext {
+BoundedContext ContextoDeSeguridadYLegislacion {
     domainVisionStatement = "Garantiza la seguridad de los datos, el control de accesos y el cumplimiento de normativas legales."
 
-    Module accessControl {
-        Aggregate UserCredential {
-            Entity UserCredential {
-                String userId
-                String hashedPassword
-                List<String> roles
+    Module ControlDeAcceso {
+        Aggregate CredencialesDeUsuario {
+            Entity CredencialDeUsuario {
+                String id
+                List<String> permisos
+            }
+        }
+    }
+
+    Module Legislacion {
+        Aggregate Legislaciones {
+            Entity Legislacion {
+                String id
+                String pais
+                String descripcion
             }
         }
     }
 }
 
-BoundedContext InfrastructureAndPlatformContext {
+BoundedContext ContextoDeInfraestructura {
     domainVisionStatement = "Proporciona la infraestructura tecnológica para soportar la operación de STA."
 
     Module cloudInfrastructure {
