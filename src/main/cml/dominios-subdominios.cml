@@ -1,0 +1,132 @@
+Domain DataManagement {
+    domainVisionStatement = "Facilitar la recolección, procesamiento, anonimización y gestión de imágenes médicas y metadatos para garantizar datos de alta calidad y seguros."
+
+  Subdomain Ingestion {
+    type = CORE_DOMAIN
+    domainVisionStatement = "Recaudar eficientemente datos médicos desde diversas fuentes para su posterior análisis y uso."
+    Entity DataSource
+    Entity MedicalImage
+    Service DataCollector
+  }
+
+  Subdomain Anonymization {
+    type = CORE_DOMAIN
+    domainVisionStatement = "Garantizar la protección de la privacidad eliminando información sensible de los datos médicos."
+    Entity AnonymizedData
+    Service DataAnonymizer
+  }
+
+  Subdomain ImageProcessing {
+    type = CORE_DOMAIN
+    domainVisionStatement = "Transformar y optimizar imágenes médicas para su análisis y uso en modelos de IA."
+    Entity ProcessedImage
+    Service ImageProcessor
+  }
+
+  Subdomain MetadataManagement {
+    type = CORE_DOMAIN
+    domainVisionStatement = "Administrar y enriquecer metadatos asociados a las imágenes médicas para mejorar su utilidad analítica."
+    Entity Metadata
+    Service MetadataManager
+  }
+}
+
+Domain ArtificialIntelligence {
+    domainVisionStatement = "Optimizar el entrenamiento, evaluación y distribución de modelos de IA para aplicaciones médicas, maximizando el valor de los datos recolectados."
+
+  Subdomain ModelTraining {
+    type = CORE_DOMAIN
+    domainVisionStatement = "Facilitar el entrenamiento de modelos de IA utilizando datasets médicos de alta calidad."
+    Entity Dataset
+    Service TrainingService
+  }
+
+  Subdomain ModelEvaluation {
+    type = CORE_DOMAIN
+    domainVisionStatement = "Evaluar el rendimiento de modelos de IA para asegurar su precisión y confiabilidad en entornos médicos."
+    Entity EvaluationReport
+    Service EvaluationEngine
+  }
+
+  Subdomain DataDistribution {
+    type = CORE_DOMAIN
+    domainVisionStatement = "Distribuir datos procesados de manera eficiente y segura a los clientes y sistemas externos."
+    Entity DataPackage
+    Service DataDistributor
+  }
+}
+
+Domain ClientAndPartnerManagement {
+    domainVisionStatement = "Gestionar de manera eficiente las relaciones con socios de datos, clientes y la facturación para garantizar un ecosistema sostenible y en crecimiento."
+
+  Subdomain DataPartnership {
+    type = SUPPORTING_DOMAIN
+    domainVisionStatement = "Establecer y mantener relaciones estratégicas con socios de datos para ampliar el alcance de recolección."
+    Entity HealthCenter
+    Service PartnershipManager
+  }
+
+  Subdomain ClientManagement {
+    type = SUPPORTING_DOMAIN
+    domainVisionStatement = "Administrar las interacciones y relaciones con clientes para mejorar su satisfacción y fidelidad."
+    Entity ClientAccount
+    Service ClientService
+  }
+
+  Subdomain BillingAndLicensing {
+    type = GENERIC_SUBDOMAIN
+    domainVisionStatement = "Gestionar procesos de facturación y licenciamiento de manera eficiente y transparente."
+    Entity Invoice
+    Service BillingService
+  }
+}
+
+Domain SecurityAndCompliance {
+    domainVisionStatement = "Garantizar la seguridad, privacidad y cumplimiento normativo de los datos médicos, asegurando la confianza de los clientes y la integridad del sistema."
+
+  Subdomain PrivacyManagement {
+    type = SUPPORTING_DOMAIN
+    domainVisionStatement = "Proteger la privacidad de los datos médicos mediante políticas y controles de seguridad robustos."
+    Entity PrivacyPolicy
+    Service PrivacyController
+  }
+
+  Subdomain AccessControl {
+    type = SUPPORTING_DOMAIN
+    domainVisionStatement = "Regular el acceso a sistemas y datos para garantizar la seguridad de la información."
+    Entity UserCredential
+    Service AuthenticationService
+  }
+
+  Subdomain DataAuditing {
+    type = SUPPORTING_DOMAIN
+    domainVisionStatement = "Monitorear y auditar el uso de datos para garantizar la conformidad y la integridad del sistema."
+    Entity AuditLog
+    Service AuditService
+  }
+}
+
+Domain InfrastructureAndPlatform {
+    domainVisionStatement = "Proveer una infraestructura robusta, escalable y automatizada que soporte la operación eficiente de los servicios de STA a nivel global."
+
+  Subdomain CloudInfrastructure {
+    type = GENERIC_SUBDOMAIN
+    domainVisionStatement = "Administrar entornos virtuales en la nube para garantizar la disponibilidad y escalabilidad de los servicios."
+    Entity VirtualEnvironment
+    Service InfrastructureManager
+  }
+
+  Subdomain ProcessAutomation {
+    type = GENERIC_SUBDOMAIN
+    domainVisionStatement = "Automatizar procesos operativos para mejorar la eficiencia y reducir errores humanos."
+    Entity Pipeline
+    Service AutomationService
+  }
+
+  Subdomain MonitoringAndMaintenance {
+    type = GENERIC_SUBDOMAIN
+    domainVisionStatement = "Supervisar y mantener la infraestructura tecnológica para garantizar un rendimiento óptimo."
+    Entity MonitoringReport
+    Service MonitoringService
+  }
+}
