@@ -1,87 +1,120 @@
-Domain RecaudarImagenes {
-    domainVisionStatement = "Recolección de imágenes médicas de forma segura, escalable y eficiente manteniendo los acuerdos de privacidad de cada origen."
-
-    Subdomain GestionDataPartners {
-        type = CORE_DOMAIN
-        domainVisionStatement = "Facilitar acuerdos con proveedores de salud para recolectar imágenes médicas anonimizadas cumpliendo regulaciones y asegurando una compensación justa."
-        Entity FunteDeDatos
-        Entity Contrato
-    }
+Domain GestionDeDatosMedicos {
+    domainVisionStatement = "Recolección, procesamiento y gestión de datos médicos anonimizados para potenciar el desarrollo de IA en salud."
 
     Subdomain IngestionDeDatos {
         type = CORE_DOMAIN
-        domainVisionStatement = "Permitir la integración eficiente de imágenes médicas desde múltiples fuentes como servidores PACS, almacenamiento en la nube y data centers on-premise."
+        domainVisionStatement = "Facilitar la integración segura y eficiente de imágenes médicas desde múltiples fuentes, garantizando la calidad de los datos."
+        Entity FuenteDeDatos
         Entity Metadata
         Entity ImagenDICOM
         Entity ServidorPACS
     }
-}
 
-Domain ProcesarImagenes {
-    domainVisionStatement = "Transformar las imágenes en datasets estructurados y preservando el anonimato de data sensible."
-
-    Subdomain Anonimizacion {
+    Subdomain AnonimizacionDeDatos {
         type = CORE_DOMAIN
-        domainVisionStatement = "Eliminar información personal de las imágenes médicas garantizando seguridad y cumplimiento normativo."
+        domainVisionStatement = "Eliminar de manera segura la información sensible de los datos médicos para garantizar el cumplimiento de regulaciones como HIPAA."
         Entity ScriptAnonimizador
-        Entity Auditoria
+        Entity AuditoriaAnonimizacion
+        Entity TokenAnonimo
     }
 
-    Subdomain EtiquetadoYCaracterizacion {
+    Subdomain ProcesamientoDeImagenes {
         type = CORE_DOMAIN
-        domainVisionStatement = "Enriquecer imágenes con metadatos estructurados y etiquetas de clasificación para el entrenamiento de IA."
+        domainVisionStatement = "Transformar imágenes médicas en datasets estructurados, enriquecidos con metadatos relevantes para IA."
+        Entity ImagenProcesada
         Entity Dataset
+        Entity CaracteristicaExtraida
     }
 
-    Subdomain TransformacionYNormalizacion {
+    Subdomain GestionDeMetadatos {
         type = CORE_DOMAIN
-        domainVisionStatement = "Estandarizar y convertir imágenes a formatos óptimos para procesamiento de IA."
-        Entity ImagenTransformada
+        domainVisionStatement = "Organizar y gestionar metadatos clínicos para mejorar la búsqueda, clasificación y análisis de datos médicos."
+        Entity MetadatoClinico
+        Entity EtiquetaDeClasificacion
+        Entity HistorialAnonimo
     }
 }
 
-Domain DistribuirImagenes {
-    domainVisionStatement = "Proveer a IA developers e investigadores datasets de alta calidad de forma segura a través de servicios de nube y API."
+Domain GestionDeClientesYProductos {
+    domainVisionStatement = "Administrar eficientemente las relaciones con clientes, suscripciones y contratos comerciales."
 
-    Subdomain ModelosSuscripcion {
-        type = SUPPORTING_DOMAIN
-        domainVisionStatement = "Proporcionar planes de acceso a datos (Standard, Pro, Enterprise) ajustados a diferentes necesidades de clientes."
-        
+    Subdomain GestionDeCuentasYSuscripciones {
+        type = GENERIC_SUBDOMAIN
+        domainVisionStatement = "Gestionar el ciclo de vida de las cuentas de clientes y suscripciones a los diferentes productos de STA."
         Entity Cliente
         Entity PlanDeSuscripcion
         Entity Factura
-        
     }
-}
 
-Domain SeguridadYLegislacion {
-    domainVisionStatement = "Asegurar que la data esté bajo las normas y legislaciones regionales."
-
-    Subdomain RegulacionesYPoliticas {
+    Subdomain FacturacionYPagos {
         type = GENERIC_SUBDOMAIN
-        domainVisionStatement = "Garantizar el cumplimiento de normativas legales y éticas para el uso de datos médicos."
-        Entity Regulacion
+        domainVisionStatement = "Controlar los procesos de facturación y pagos para asegurar la gestión financiera eficiente de STA."
+        Entity Factura
+        Entity MetodoDePago
+        Entity Transaccion
     }
 
-    Subdomain MonitoreoYAuditoria {
+    Subdomain GestionDeContratos {
         type = SUPPORTING_DOMAIN
-        domainVisionStatement = "Registrar y supervisar todas las interacciones con datos para evitar accesos no autorizados y garantizar auditoría."
-        Entity LogAcceso        
+        domainVisionStatement = "Administrar los acuerdos legales con data partners y clientes para regular el uso de datos médicos."
+        Entity Contrato
+        Entity ClausulaLegal
     }
 }
 
-Domain Infraestructura {
-    domainVisionStatement = "Construir y mantener infraestructura de nube capaz de responder grandes volúmenes de datos de forma automática y con alta disponibilidad."
+Domain SeguridadYCumplimiento {
+    domainVisionStatement = "Garantizar la seguridad de los datos médicos y el cumplimiento de normativas legales internacionales."
 
-    Subdomain MultiTenantCloud {
+    Subdomain GestionDeIdentidadYAcceso {
         type = CORE_DOMAIN
-        domainVisionStatement = "Proporcionar entornos en la nube escalables y aislados para cada cliente."
-        Entity ServidorVirtual
+        domainVisionStatement = "Controlar el acceso a los datos médicos, asegurando que solo usuarios autorizados puedan interactuar con información sensible."
+        Entity Usuario
+        Entity Rol
+        Entity PermisoDeAcceso
     }
 
-    Subdomain AutomatizacionYPipelines {
+    Subdomain AuditoriaYMonitoreo {
         type = SUPPORTING_DOMAIN
-        domainVisionStatement = "Facilitar flujos de trabajo autoservicio para la ingesta, procesamiento y distribución de datos."
-        Entity PipelineIA
+        domainVisionStatement = "Supervisar y registrar todas las interacciones con los datos para garantizar la integridad y la trazabilidad."
+        Entity LogDeAcceso
+        Entity RegistroDeEventos
+    }
+}
+
+Domain InteligenciaDeNegocios {
+    domainVisionStatement = "Proporcionar herramientas de análisis y generación de informes para la toma de decisiones estratégicas."
+
+    Subdomain AnalisisDeDatos {
+        type = GENERIC_SUBDOMAIN
+        domainVisionStatement = "Analizar grandes volúmenes de datos para extraer insights que aporten valor al negocio y a los clientes."
+        Entity ReporteAnalitico
+        Entity Dashboard
+        Entity InsightDeNegocio
+    }
+
+    Subdomain ReportingYDashboards {
+        type = SUPPORTING_DOMAIN
+        domainVisionStatement = "Generar informes visuales e interactivos que permitan monitorear el rendimiento operativo y comercial."
+        Entity Informe
+        Entity Visualizacion
+    }
+}
+
+Domain InfraestructuraYOperaciones {
+    domainVisionStatement = "Proveer una infraestructura tecnológica robusta, escalable y eficiente para soportar las operaciones de STA."
+
+    Subdomain GestionDeInfraestructuraEnLaNube {
+        type = GENERIC_SUBDOMAIN
+        domainVisionStatement = "Administrar los recursos de infraestructura en la nube para garantizar la disponibilidad y el rendimiento óptimo del sistema."
+        Entity ServidorVirtual
+        Entity RecursoCloud
+    }
+
+    Subdomain DevOpsYSRE {
+        type = SUPPORTING_DOMAIN
+        domainVisionStatement = "Implementar prácticas de DevOps y Site Reliability Engineering para optimizar el ciclo de vida del desarrollo y la operación de software."
+        Entity PipelineCI_CD
+        Entity MonitoreoDeServicios
+        Entity Incidente
     }
 }

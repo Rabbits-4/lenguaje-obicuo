@@ -1,0 +1,87 @@
+Domain RecaudarImagenes {
+    domainVisionStatement = "Recolección de imágenes médicas de forma segura, escalable y eficiente manteniendo los acuerdos de privacidad de cada origen."
+
+    Subdomain GestionDataPartners {
+        type = CORE_DOMAIN
+        domainVisionStatement = "Facilitar acuerdos con proveedores de salud para recolectar imágenes médicas anonimizadas cumpliendo regulaciones y asegurando una compensación justa."
+        Entity FunteDeDatos
+        Entity Contrato
+    }
+
+    Subdomain IngestionDeDatos {
+        type = CORE_DOMAIN
+        domainVisionStatement = "Permitir la integración eficiente de imágenes médicas desde múltiples fuentes como servidores PACS, almacenamiento en la nube y data centers on-premise."
+        Entity Metadata
+        Entity ImagenDICOM
+        Entity ServidorPACS
+    }
+}
+
+Domain ProcesarImagenes {
+    domainVisionStatement = "Transformar las imágenes en datasets estructurados y preservando el anonimato de data sensible."
+
+    Subdomain Anonimizacion {
+        type = CORE_DOMAIN
+        domainVisionStatement = "Eliminar información personal de las imágenes médicas garantizando seguridad y cumplimiento normativo."
+        Entity ScriptAnonimizador
+        Entity Auditoria
+    }
+
+    Subdomain EtiquetadoYCaracterizacion {
+        type = CORE_DOMAIN
+        domainVisionStatement = "Enriquecer imágenes con metadatos estructurados y etiquetas de clasificación para el entrenamiento de IA."
+        Entity Dataset
+    }
+
+    Subdomain TransformacionYNormalizacion {
+        type = CORE_DOMAIN
+        domainVisionStatement = "Estandarizar y convertir imágenes a formatos óptimos para procesamiento de IA."
+        Entity ImagenTransformada
+    }
+}
+
+Domain DistribuirImagenes {
+    domainVisionStatement = "Proveer a IA developers e investigadores datasets de alta calidad de forma segura a través de servicios de nube y API."
+
+    Subdomain ModelosSuscripcion {
+        type = SUPPORTING_DOMAIN
+        domainVisionStatement = "Proporcionar planes de acceso a datos (Standard, Pro, Enterprise) ajustados a diferentes necesidades de clientes."
+        
+        Entity Cliente
+        Entity PlanDeSuscripcion
+        Entity Factura
+        
+    }
+}
+
+Domain SeguridadYLegislacion {
+    domainVisionStatement = "Asegurar que la data esté bajo las normas y legislaciones regionales."
+
+    Subdomain RegulacionesYPoliticas {
+        type = GENERIC_SUBDOMAIN
+        domainVisionStatement = "Garantizar el cumplimiento de normativas legales y éticas para el uso de datos médicos."
+        Entity Regulacion
+    }
+
+    Subdomain MonitoreoYAuditoria {
+        type = SUPPORTING_DOMAIN
+        domainVisionStatement = "Registrar y supervisar todas las interacciones con datos para evitar accesos no autorizados y garantizar auditoría."
+        Entity LogAcceso        
+    }
+}
+
+Domain Infraestructura {
+    domainVisionStatement = "Construir y mantener infraestructura de nube capaz de responder grandes volúmenes de datos de forma automática y con alta disponibilidad."
+
+    Subdomain MultiTenantCloud {
+        type = CORE_DOMAIN
+        domainVisionStatement = "Proporcionar entornos en la nube escalables y aislados para cada cliente."
+        Entity ServidorVirtual
+    }
+
+    Subdomain AutomatizacionYPipelines {
+        type = SUPPORTING_DOMAIN
+        domainVisionStatement = "Facilitar flujos de trabajo autoservicio para la ingesta, procesamiento y distribución de datos."
+        Entity PipelineIA
+    }
+}
