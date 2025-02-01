@@ -1,0 +1,41 @@
+ContextMap AeroAlpesReservations {
+    contains ClientesContext
+    contains ReservasContext
+
+    // Relación de Shared Kernel entre Clientes y Reservas
+    ClientesContext [SK]<->[SK] ReservasContext
+
+    // Relación de Upstream y Downstream
+    ReservasContext [D]<-[U,OHS,PL] ClientesContext
+}
+
+BoundedContext ClientesContext {
+    Module clientes {
+        basePackage = org.aeroalpes.domain.model
+
+        Aggregate Cliente {
+            Entity Cliente {
+                String id
+                String nombre
+                String correoElectronico
+                String telefono
+            }
+        }
+    }
+}
+
+BoundedContext ReservasContext {
+    Module reservas {
+        basePackage = org.aeroalpes.domain.model
+
+        Aggregate Reserva {
+            Entity Reserva {
+                String id
+                - Cliente cliente
+                String estado
+                Date fecha
+                double precioTotal
+            }
+        }
+    }
+}
