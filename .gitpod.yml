@@ -1,5 +1,5 @@
 tasks:
-  - init: ./gradlew build
+  - init: chmod +x gradlew && ./gradlew build
 image:
   file: .gitpod.Dockerfile
 vscode:
