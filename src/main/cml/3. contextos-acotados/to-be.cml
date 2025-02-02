@@ -1,4 +1,4 @@
-// AS-IS Context Map
+// TO-BE Context Map
 ContextMap SaludTechContextMap {
     type SYSTEM_LANDSCAPE
     state TO_BE
