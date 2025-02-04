@@ -14,3 +14,9 @@ Criterios de Aceptación:
    -La descarga debe estar disponible en DICOM o JSON.
    -Debe existir una API para consultas avanzadas.
 
+3. Historia: Como Responsable de Cumplimiento, quiero asegurarme de que todas las imágenes sean anonimizadas conforme a HIPAA
+
+Criterios de Aceptación:
+ - El sistema debe detectar y eliminar automáticamente cualquier información sensible.
+ - Se debe generar un reporte de auditoría tras el proceso de anonimización.
+ - No debe existir forma de recuperar datos identificables de un paciente.
