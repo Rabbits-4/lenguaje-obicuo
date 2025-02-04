@@ -2,11 +2,11 @@
 
 Este proyecto se centra en definir el **lenguaje ubicuo** y establecer **contextos acotados** para el proyecto **SaludTech de los Alpes**. Los siguientes puntos han sido documentados:
 
-1. Documentación de dominios y subdominios.
-2. Creación del lenguaje ubicuo.
-3. Definición de contextos acotados y sus relaciones.
+1. **Documentación de dominios y subdominios**
+2. **Creación del lenguaje ubicuo**
+3. **Definición de contextos acotados y sus relaciones**
 
-## Estructura de Carpetas
+## Estructura del Proyecto
 
 ```
 Lenguaje-obicuo/
@@ -43,7 +43,40 @@ Las imágenes pueden generarse en las siguientes rutas:
 - `src/main/cml/3. contextos-acotados/as-is.cml`
 - `src/main/cml/3. contextos-acotados/to-be.cml`
 
-## Abrir en Gitpod
+### Detalles de Archivos Importantes
+
+- **.gitpod.Dockerfile:**
+  - Basado en la imagen `gitpod/workspace-full`.
+  - Instala **Graphviz** para la generación de gráficos.
+  - Configura Java 11 (versión 11.0.12-tem) utilizando SDKMAN.
+
+- **.gitpod.yml:**
+  - Define tareas de inicialización:
+    - Da permisos de ejecución a `gradlew` y ejecuta `./gradlew build`.
+  - Configura la imagen de Gitpod para usar el Dockerfile personalizado.
+  - Incluye extensiones de VS Code necesarias para trabajar con Context Mapper, PlantUML, Java y AsciiDoc.
+
+- **src/main/cml:**
+  - Contiene los archivos `.cml` que documentan los dominios, subdominios y contextos acotados.
+    - `1. dominios-subdominios/domains-subdomains-v1.cml`
+    - `3. contextos-acotados/as-is.cml`
+    - `3. contextos-acotados/to-be.cml`
+
+## Instrucciones para Abrir el Repositorio en Gitpod
+
+1. Asegúrate de tener una cuenta en [Gitpod](https://www.gitpod.io/).
+2. Clona este repositorio o simplemente abrelo directamente en Gitpod:
+
+   ```bash
+   https://gitpod.io/#<URL_DEL_REPOSITORIO>
+   ```
+
+3. Gitpod se encargará de:
+   - Construir el proyecto automáticamente.
+   - Instalar las dependencias necesarias.
+   - Configurar el entorno de desarrollo con las extensiones requeridas.
+
+4. Abre los archivos `.cml` dentro del directorio `src/main/cml` para comenzar a trabajar con Context Mapper.
 
 Si hay errores de permisos al abrir Gitpod, puedes hacer un **fork** del repositorio y agregar la URL del nuevo repo después del `#`.  
 
@@ -54,3 +87,7 @@ Ejemplo:
 <a href="https://gitpod.io/#https://github.com/Rabbits-4/lenguaje-obicuo" style="padding: 10px;">
     <img src="https://gitpod.io/button/open-in-gitpod.svg" width="150" alt="Push" align="center">
 </a>
+
+---
+
+Para cualquier duda, consulta la documentación oficial de [Context Mapper](https://contextmapper.org/).
