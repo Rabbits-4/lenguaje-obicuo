@@ -36,12 +36,15 @@ El lenguaje ubicuo fue desarrollado en Miro, utilizando la técnica Top-Down, co
 
 ![image](https://github.com/user-attachments/assets/de3957b5-69dd-4fea-ae78-62437cea57db)
 
+
 ## 3. Definición de contextos acotados y sus relaciones
 
 Las imágenes pueden generarse en las siguientes rutas:
 
 - `src/main/cml/3. contextos-acotados/as-is.cml`
+- ![as-is_ContextMap](https://github.com/user-attachments/assets/f5fd5b42-83a3-4d06-808a-78e0a935bb74)
 - `src/main/cml/3. contextos-acotados/to-be.cml`
+- ![to-be_ContextMap](https://github.com/user-attachments/assets/a8a928c5-25df-422b-8187-5e3ccafbfa17)
 
 ### Detalles de Archivos Importantes
 
