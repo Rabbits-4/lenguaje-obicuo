@@ -27,6 +27,12 @@ Los dominios y subdominios se pueden encontrar en la ruta `src/main/cml/dominios
 
 Los dominios y subdominios se pueden encontrar en la ruta `src/main/cml/dominios-subdominios/1. domains-subdomains-v1.cml`
 
+![image](https://github.com/user-attachments/assets/2c4aae14-a396-40ba-9842-1fb86b925b75)
+
+![image](https://github.com/user-attachments/assets/de3957b5-69dd-4fea-ae78-62437cea57db)
+
+
+
 ### Encarpetado
 
 <a href="https://gitpod.io/#https://github.com/Rabbits-4/lenguaje-obicuo" style="padding: 10px;">
