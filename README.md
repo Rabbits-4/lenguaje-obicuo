@@ -1,12 +1,13 @@
-# lenguaje-obicuo
+# Lenguaje Ubicuo
 
-En este projecto se basa en cecontrar el lenguaje obucio ademas de dofinir contextos acotados para el projecto de SaludTech de los Alpes. los siguientes puntos furon documentados:
+Este proyecto se centra en definir el **lenguaje ubicuo** y establecer **contextos acotados** para el proyecto **SaludTech de los Alpes**. Los siguientes puntos han sido documentados:
 
-1. Documentar dominios y sub-dominios
-2. Creación del lenguaje obicuo
-3. Creacion de contextos acotados y sus realciones
+1. Documentación de dominios y subdominios.
+2. Creación del lenguaje ubicuo.
+3. Definición de contextos acotados y sus relaciones.
 
-### Encarpetado
+## Estructura de Carpetas
+
 ```
 Lenguaje-obicuo/
 ├── src/
@@ -20,28 +21,35 @@ Lenguaje-obicuo/
 ...
 ```
 
-### 1. Documentar dominios y sub-dominios
+## 1. Documentación de dominios y subdominios
 
-Los dominios y subdominios se pueden encontrar en la ruta `src/main/cml/dominios-subdominios/1. domains-subdomains-v1.cml`
+Los dominios y subdominios se pueden encontrar en la ruta:  
+`src/main/cml/dominios-subdominios/1. domains-subdomains-v1.cml`
 
 ![image](https://github.com/user-attachments/assets/97f71ad9-fc96-4cf2-a354-6028ebc86ff5)
 
+## 2. Creación del lenguaje ubicuo
 
-### 2. Creación del lenguaje obicuo
-
-Los dominios y subdominios se pueden encontrar en la ruta `src/main/cml/dominios-subdominios/1. domains-subdomains-v1.cml`
+El lenguaje ubicuo se encuentra en la misma ruta donde se documentan los dominios y subdominios:  
+`src/main/cml/dominios-subdominios/1. domains-subdomains-v1.cml`
 
 ![image](https://github.com/user-attachments/assets/2c4aae14-a396-40ba-9842-1fb86b925b75)
 
 ![image](https://github.com/user-attachments/assets/de3957b5-69dd-4fea-ae78-62437cea57db)
 
-### 3. Creacion de contextos acotados y sus realciones
+## 3. Definición de contextos acotados y sus relaciones
 
-Se pueden generar las images en la ruta: `src/main/cml/3. contextos-acotados/as-is.cml` y `src/main/cml/3. contextos-acotados/to-be.cml`
+Las imágenes pueden generarse en las siguientes rutas:
 
-### Abrir gitpod
-Si tiene errores de permisos al abrir el gitpod, se puede hacer un fork del repo y agregar la url del repo luego del #
-ejemplo: `https://gitpod.io/#https://github.com/Rabbits-4/lenguaje-obicuo`
+- `src/main/cml/3. contextos-acotados/as-is.cml`
+- `src/main/cml/3. contextos-acotados/to-be.cml`
+
+## Abrir en Gitpod
+
+Si hay errores de permisos al abrir Gitpod, puedes hacer un **fork** del repositorio y agregar la URL del nuevo repo después del `#`.  
+
+Ejemplo:  
+`https://gitpod.io/#https://github.com/Rabbits-4/lenguaje-ubicuo`
 
 
 <a href="https://gitpod.io/#https://github.com/Rabbits-4/lenguaje-obicuo" style="padding: 10px;">
