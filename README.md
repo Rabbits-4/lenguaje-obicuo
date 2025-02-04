@@ -6,6 +6,7 @@ En este projecto se basa en cecontrar el lenguaje obucio ademas de dofinir conte
 2. Creación del lenguaje obicuo
 3. Creacion de contextos acotados y sus realciones
 
+### Encarpetado
 ```
 Lenguaje-obicuo/
 ├── src/
@@ -23,7 +24,10 @@ Lenguaje-obicuo/
 
 Los dominios y subdominios se pueden encontrar en la ruta `src/main/cml/dominios-subdominios/1. domains-subdomains-v1.cml`
 
-### 2. Documentar dominios y sub-dominios
+![image](https://github.com/user-attachments/assets/97f71ad9-fc96-4cf2-a354-6028ebc86ff5)
+
+
+### 2. Creación del lenguaje obicuo
 
 Los dominios y subdominios se pueden encontrar en la ruta `src/main/cml/dominios-subdominios/1. domains-subdomains-v1.cml`
 
@@ -31,9 +35,14 @@ Los dominios y subdominios se pueden encontrar en la ruta `src/main/cml/dominios
 
 ![image](https://github.com/user-attachments/assets/de3957b5-69dd-4fea-ae78-62437cea57db)
 
+### 3. Creacion de contextos acotados y sus realciones
 
+Se pueden generar las images en la ruta: `src/main/cml/3. contextos-acotados/as-is.cml` y `src/main/cml/3. contextos-acotados/to-be.cml`
 
-### Encarpetado
+### Abrir gitpod
+Si tiene errores de permisos al abrir el gitpod, se puede hacer un fork del repo y agregar la url del repo luego del #
+ejemplo: `https://gitpod.io/#https://github.com/Rabbits-4/lenguaje-obicuo`
+
 
 <a href="https://gitpod.io/#https://github.com/Rabbits-4/lenguaje-obicuo" style="padding: 10px;">
     <img src="https://gitpod.io/button/open-in-gitpod.svg" width="150" alt="Push" align="center">
