@@ -30,8 +30,7 @@ Los dominios y subdominios se pueden encontrar en la ruta:
 
 ## 2. Creación del lenguaje ubicuo
 
-El lenguaje ubicuo se encuentra en la misma ruta donde se documentan los dominios y subdominios:  
-`src/main/cml/dominios-subdominios/1. domains-subdomains-v1.cml`
+El lenguaje ubicuo fue desarrollado en Miro, utilizando la técnica Top-Down, con Event Storming y una vista Big Picture
 
 ![image](https://github.com/user-attachments/assets/2c4aae14-a396-40ba-9842-1fb86b925b75)
 
