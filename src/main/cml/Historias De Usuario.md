@@ -10,7 +10,7 @@ Criterios de Aceptación:
 2.  Historia: Como Científico de Datos, quiero acceder a imágenes médicas para entrenar modelos de IA
 
 Criterios de Aceptación:
-  -El usuario debe poder filtrar imágenes según modalidad, patología y región anatómica.
-  -La descarga debe estar disponible en DICOM o JSON.
-  -Debe existir una API para consultas avanzadas.
+   -El usuario debe poder filtrar imágenes según modalidad, patología y región anatómica.
+   -La descarga debe estar disponible en DICOM o JSON.
+   -Debe existir una API para consultas avanzadas.
 
