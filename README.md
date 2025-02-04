@@ -3,6 +3,23 @@ Vision Statement: STA se especializa en la recolección, procesamiento y distrib
 
 # Lenguaje Ubicuo
 
+Conceptos Clave
+
+  - Imagen Médica: Archivo visual que representa un estudio clínico (Rayos X, Tomografía, Resonancia, Mamografía, Ultrasonido, etc.).
+  - Metadatos: Información asociada a una imagen médica, como modalidad, región anatómica, atributos de imagen y diagnóstico asociado.
+  - Anonimización: Proceso de eliminación o transformación de información sensible en imágenes médicas para cumplir con regulaciones de privacidad (HIPAA, GDPR).
+  - Paciente Pseudonimizado: Identificador único que permite rastrear datos de un mismo paciente sin revelar su identidad real.
+  - Centro de Salud: Institución proveedora de imágenes médicas (hospital, clínica, laboratorio, institución gubernamental de salud).
+  - Cliente: Empresa, investigador o individuo que consume los datos procesados (desarrollador de IA, centro de investigación, institución reguladora, etc.).
+  - Pipeline de Procesamiento: Flujo automatizado de ingestión, anonimización, etiquetado y estructuración de imágenes médicas.
+  - Historial Clínico Pseudonimizado: Conjunto de datos longitudinales anonimizados de un mismo paciente a través del tiempo.
+  - Región Anatómica: Parte del cuerpo asociada a una imagen médica, como cabeza, tórax, abdomen, musculoesquelético o pélvico.
+  - Modalidad de Imagen: Tipo de estudio diagnóstico, como Rayos X, Tomografía Computarizada (CT), Resonancia Magnética (MRI), Ultrasonido (US), entre otros.
+  - Condición Médica: Diagnóstico o sospecha clínica asociada a una imagen médica, como neumonía, fracturas, tumores o infecciones.
+  - Plataforma de Datos: Interfaz que permite a los clientes acceder, filtrar y descargar imágenes médicas anonimizadas y sus metadatos asociados.
+  - Normativa de Protección de Datos: Reglas y regulaciones que rigen la privacidad y el uso de datos médicos, como HIPAA (EE.UU.), GDPR (Europa) y LGPD (Brasil).
+  - Multi-Tenancy: Arquitectura que permite gestionar datos segmentados de múltiples clientes y regiones de manera segura e independiente.
+
 Este proyecto se centra en definir el **lenguaje ubicuo** y establecer **contextos acotados** para el proyecto **SaludTech de los Alpes**. Los siguientes puntos han sido documentados:
 
 1. **Documentación de dominios y subdominios**
