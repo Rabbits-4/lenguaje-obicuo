@@ -1,3 +1,6 @@
+
+Vision Statement: STA se especializa en la recolección, procesamiento y distribución de imágenes médicas anonimizadas para entrenar modelos de inteligencia artificial en el sector salud. Su enfoque es la escalabilidad, seguridad y cumplimiento regulatorio en múltiples regiones.
+
 # Lenguaje Ubicuo
 
 Este proyecto se centra en definir el **lenguaje ubicuo** y establecer **contextos acotados** para el proyecto **SaludTech de los Alpes**. Los siguientes puntos han sido documentados:
