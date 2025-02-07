@@ -20,3 +20,8 @@ Criterios de Aceptación:
  - El sistema debe detectar y eliminar automáticamente cualquier información sensible.
  - Se debe generar un reporte de auditoría tras el proceso de anonimización.
  - No debe existir forma de recuperar datos identificables de un paciente.
+
+
+**Punto de vista de contexto** 
+
+Identificar requerimeinto de calidad
